@@ -7,6 +7,11 @@
 * {
     box-sizing: border-box;
 }
+#days {
+    padding: 1px;
+    font-size: xxx-large;
+    color: var(--main-color);
+}
 
 body {
     background: url('/witch.jpg');
