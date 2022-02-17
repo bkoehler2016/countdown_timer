@@ -5,31 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown timer</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">`
 </head>
 <body>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Feb 22, 2022 10:00:00").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get today's date and time
+          var now = new Date().getTime();
+            
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+            
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          // Output the result in an element with id="demo"
+          document.getElementById("days").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+            
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("days").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+        </script>
     <h1>Witch Queen Release</h1>
     <div class="countdown-container">
-        
-        <div class="countdown-el days-c">
-            <p class="big-text" id="days">0</p>
-            <span>Days</span>
-        </div>
+        <p id="days"></p>
+       
 
-        <div class="countdown-el hours-c">
-            <p class="big-text" id="hours">0</p>
-            <span>hours</span>
-        </div>
-
-        <div class="countdown-el mins-c">
-            <p class="big-text" id="mins">0</p>
-            <span>mins</span>
-        </div>
-
-        <div class="countdown-el seconds-c">
-            <p class="big-text" id="seconds">0</p>
-            <span>seconds</span>
+       
         </div>
     </div>
 </body>
