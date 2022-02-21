@@ -22,6 +22,7 @@ var x = setInterval(function () {
   // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("days").innerHTML = "EXPIRED";
+    document.getElementById("days").innerHTML =
+      "IT'S OUT ALREADY GO AND PLAY IT!!!!!";
   }
 }, 1000);
