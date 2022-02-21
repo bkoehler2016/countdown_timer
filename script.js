@@ -19,6 +19,20 @@ var x = setInterval(function () {
   document.getElementById("days").innerHTML =
     days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
+  // Removing the elemnts when the paticular variable is 0
+  if (days == 0) {
+    document.getElementById("days").innerHTML =
+      hours + "h " + minutes + "m " + seconds + "s ";
+  }
+
+  if (hours == 0) {
+    document.getElementById("days").innerHTML = minutes + "m " + seconds + "s ";
+  }
+
+  if (minutes == 0 && hours == 0) {
+    document.getElementById("days").innerHTML = seconds + "s ";
+  }
+
   // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(x);

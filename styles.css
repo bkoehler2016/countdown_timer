@@ -2,16 +2,22 @@
 
 :root {
   --main-color: #fff;
+  --secondary-color: #000;
 }
 
 * {
   box-sizing: border-box;
 }
+h1 {
+  color: var(--main-color);
+}
+
 #days {
-  padding: 1px;
-  font-size: 2em;
+  margin: 2px;
+  font-size: 4em;
   font-weight: bold;
   color: var(--main-color);
+  text-align: center;
 }
 
 body {
